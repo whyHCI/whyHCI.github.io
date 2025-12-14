@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Spectral:wght@400;500&display=swap");
+
+    :root {
+      --bg: #fdfcf9;
+      --bg-alt: #ffffff;
+      --text: #0f0f0f;
+      --muted: #6d6b66;
+      --accent: #1a1aef;
+      --border: #e8e2d5;
+      --shadow-soft: 0 30px 60px rgba(0, 0, 0, 0.04);
+      --max-width: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Space Grotesk", "IBM Plex Sans", -apple-system, BlinkMacSystemFont,
+        "SF Pro Text", "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #000000;
+    }
+
+    .page-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+
+    /* 顶部导航 */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0 18px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(253, 252, 249, 0.9);
+    }
+
+    .site-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+    }
+
+    .site-subtitle {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: var(--text);
+    }
+
+    /* 主体布局 */
+    main {
+      margin-top: 32px;
+      display: block;
+    }
+
+    /* Hero 区域 */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+      gap: 36px;
+      padding: 36px 0 24px;
+      align-items: start;
+    }
+
+    .hero-text {
+      max-width: 100%;
+    }
+
+    .hero-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .photo-frame {
+      width: 100%;
+      max-width: 260px;
+      aspect-ratio: 1 / 1;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #f7f3ea;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .hero-title {
+      margin: 0 0 18px;
+      font-size: 2.8rem;
+      font-family: "Spectral", "Times New Roman", serif;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      margin: 0 0 24px;
+      color: #35332d;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    .hero-link {
+      position: relative;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      text-decoration: none;
+    }
+
+    .hero-link::after,
+    .hero-link:hover::after {
+      content: none;
+    }
+
+    /* About 区块 */
+    .section {
+      margin-top: 20px;
+      padding: 24px 0;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .section + .section {
+      margin-top: 20px;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .section hr {
+      border: none;
+      border-bottom: 1px solid var(--border);
+      margin: 8px 0 16px;
+    }
+
+    .section p {
+      margin: 0 0 12px;
+      font-size: 0.98rem;
+      color: #2d2c28;
+    }
+
+    .note-banner {
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: #fff5c2;
+      border: 1px solid #f0d974;
+      font-size: 0.85rem;
+    }
+
+    /* News 区块 */
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .news-item + .news-item {
+      margin-top: 8px;
+    }
+
+    .news-date {
+      font-weight: 600;
+      margin-right: 10px;
+      white-space: nowrap;
+      letter-spacing: 0.08em;
+    }
+
+    .news-text {
+      color: #2d2c28;
+    }
+
+    .news-more {
+      margin-top: 16px;
+    }
+
+    .news-list[data-collapsed="true"] .news-item:nth-child(n + 4) {
+      display: none;
+    }
+
+    .news-toggle {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--accent);
+    }
+
+    .news-toggle:hover {
+      color: #000000;
+    }
+
+    /* Publications 简略列表 */
+    .pub-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .pub-item + .pub-item {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .pub-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .pub-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      letter-spacing: 0.08em;
+    }
+
+    .pub-links a {
+      font-size: 0.78rem;
+      margin-right: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px;
+        letter-spacing: 0.12em;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo {
+        align-items: flex-start;
+      }
+    }
+  </style>
+  </style>
+
+  <script>
+    // 简单的导航平滑滚动
+    document.addEventListener("DOMContentLoaded", function () {
+      const links = document.querySelectorAll('a[href^="#"]');
+      links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const targetId = link.getAttribute("href");
+          if (targetId.length > 1) {
+            const target = document.querySelector(targetId);
+            if (target) {
+              e.preventDefault();
+              window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          }
+        });
+      });
+
+      const newsList = document.getElementById("news-list");
+      const newsToggle = document.querySelector(".news-toggle");
+      if (newsList && newsToggle) {
+        newsToggle.addEventListener("click", () => {
+          const collapsed = newsList.getAttribute("data-collapsed") !== "false";
+          const nextState = collapsed ? "false" : "true";
+          newsList.setAttribute("data-collapsed", nextState);
+          newsToggle.textContent = collapsed ? "Show less" : "More updates";
+          newsToggle.setAttribute("aria-expanded", collapsed ? "true" : "false");
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="page-wrap">
+    <!-- 顶部导航 -->
+    <header class="site-header">
+      <div class="site-title">Hongyue Wang 王鸿岳</div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="mailto:hongyue.wang@monash.edu">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 左侧主内容 -->
+      <div>
+        <!-- Hero 卡片 -->
+        <section id="home" class="hero">
+          <div class="hero-text">
+            <p>
+              Hongyue is an HCI researcher, designer, and engineer based in Melbourne, Australia. He is
+              currently a Ph.D. candidate at the <a href="https://exertiongameslab.org/" target="_blank" rel="noopener">Exertion Games Lab</a>,
+              Monash University, supervised by <a href="https://www.florianfloydmueller.com/" target="_blank" rel="noopener">Prof. Florian ‘Floyd’ Mueller</a>
+              and <a href="https://samithaelvitigala.com/" target="_blank" rel="noopener">Dr. Don Samitha Elvitigala</a>. His work bridges tangible
+              artifacts, multisensory interaction, and extended reality. Currently, he collaborates with
+              culinary practitioners to explore auditory elements as programmable “ingredients” that support
+              creative experimentation and enrich the dining experience.
+            </p>
+            <p>
+              He is interested in creating novel interfaces and engaging user experiences that merge emerging
+              technologies and art to uncover knowledge through hands-on design practice, in-the-field studies,
+              and reflection. In particular, his research focuses on:
+            </p>
+            <p>
+              (1) exploring interactive digital elements as new dimensions of creative expression;<br />
+              (2) designing seamless interfaces that integrate into daily life through unobtrusive interactions;<br />
+              (3) developing edible interactions that combine technology, edibility, and perception to reimagine the future of eating experiences.
+            </p>
+          </div>
+          <div class="hero-photo">
+            <div class="photo-frame">
+              <img src="images/photo.jpg" alt="Portrait of Your Name" />
+            </div>
+            <div class="hero-links">
+              <a class="hero-link" href="https://scholar.google.com/citations?user=kXGKhaMAAAAJ" target="_blank" rel="noopener">Scholar</a>
+              <a class="hero-link" href="https://www.linkedin.com/in/hongyuewanghci" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="hero-link" href="mailto:hongyue.wang@monash.edu">Email</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- News 区块 -->
+        <section id="news" class="section">
+          <h2 class="section-title">News</h2>
+          <hr />
+          <ul id="news-list" class="news-list" data-collapsed="true">
+            <li class="news-item">
+              <span class="news-date">2025-10</span>
+              <span class="news-text">
+                I will be at <strong>ICHEC 2025</strong> in Singapore, presenting my latest poster
+                work. See you all there! :D
+              </span>
+            </li>
+            <li class="news-item">
+              <span class="news-date">2025-01</span>
+              <span class="news-text">
+                We got two <strong>CHI 2025</strong> papers accepted in the main track, along with two
+                LBWs! See you all in Yokohama! 🎉
+              </span>
+            </li>
+            <li class="news-item">
+              <span class="news-date">2024-03</span>
+              <span class="news-text">
+                Our two <strong>CHI 2024</strong> late-breaking works have been accepted! Thanks to
+                all the co-authors! 😊
+              </span>
+            </li>
+            <li class="news-item">
+              <span class="news-date">2023-09</span>
+              <span class="news-text">
+                I officially joined the <strong>Exertion Games Lab</strong> to start my PhD journey,
+                researching auditory interfaces for food interaction.
+              </span>
+            </li>
+          </ul>
+          <div class="news-more">
+            <button class="news-toggle" type="button" aria-expanded="false" aria-controls="news-list">
+              More updates
+            </button>
+          </div>
+        </section>
+
+        <!-- Publications 简略区块（首页只展示部分） -->
+        <section id="publications" class="section">
+          <h2 class="section-title">Full Paper Publications</h2>
+          <hr />
+          <ul class="pub-list">
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://doi.org/10.1145/3706598.3714237" target="_blank" rel="noopener">
+                  Towards Understanding Interactive Sonic Gastronomy with Chefs and Diners
+                </a>
+              </div>
+              <div class="pub-meta">
+                <strong>Hongyue Wang</strong>, Jialin Deng, Linjia He, Nathalie Overdevest, Ryan Wee, Yan Wang,
+                Phoebe O. Toups Dugas, Don Samitha Elvitigala, Florian 'Floyd' Mueller · CHI 2025
+              </div>
+              <div>
+                Field study unpacking how chefs and diners co-create sonic dining experiences
+                to inform future multisensory design tools.
+              </div>
+              <div class="pub-links">
+                <a href="/file/towards2025.pdf" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://doi.org/10.1145/3706598.3713892" target="_blank" rel="noopener">
+                  Sonic Delights: Exploring the Design of Food as An Auditory-Gustatory Interface
+                </a>
+              </div>
+              <div class="pub-meta">
+                Jialin Deng, Yinyi Li, <strong>Hongyue Wang</strong>, Ziqi Fang, Florian 'Floyd' Mueller · CHI 2025
+              </div>
+              <div>
+                Introduces speculative food artifacts that translate sonic cues into gustatory
+                sensations, expanding co-creative culinary practices.
+              </div>
+              <div class="pub-links">
+                <a href="/file/sonicdelights.pdf" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://www.sciencedirect.com/science/article/pii/S1071581923002069" target="_blank" rel="noopener">
+                  Grand Challenges in Human-Food Interaction
+                </a>
+              </div>
+              <div class="pub-meta">
+                Florian 'Floyd' Mueller, Marianna Obrist, Ferran Altarriba Bertran, Neharika Makam, Soh Kim,
+                Christopher Dawes, Patrizia Marti, Maurizio Mancini, Eleonora Ceccaldi, Nandini Pasumarthy,
+                Sahej Claire, Kyung seo Jung, Jialin Deng, Jürgen Steimle, Nadejda Krasteva, Matti Schwalk,
+                Harald Reiterer, <strong>Hongyue Wang</strong>, Yan Wang · IJHCS 2024
+              </div>
+              <div>
+                A multi-institution agenda outlining opportunities and hurdles for future
+                human-food interaction research.
+              </div>
+              <div class="pub-links">
+                <a href="/file/grand%20challenges.pdf" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://www.tandfonline.com/doi/abs/10.1080/10447318.2023.2227823" target="_blank" rel="noopener">
+                  MRLab: Virtual Reality Fusion Smart Laboratory Based on Multimodal Fusion
+                </a>
+              </div>
+              <div class="pub-meta">
+                <strong>Hongyue Wang</strong>, Zhiquan Feng*, Xiaohui Yang, Liran Zhou, Jinglan Tian, Qingbei Guo · IJHCI 2023
+              </div>
+              <div>
+                Presents a multimodal VR laboratory platform that blends smart sensing and
+                instructional design for immersive chemistry education.
+              </div>
+              <div class="pub-links">
+                <a href="/file/MRLab.pdf" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://www.tandfonline.com/doi/abs/10.1080/10447318.2023.2247606?journalCode=hihc20" target="_blank" rel="noopener">
+                  MIUIC: A Human-Computer Collaborative Multimodal Intention-Understanding Algorithm Incorporating Comfort Analysis
+                </a>
+              </div>
+              <div class="pub-meta">
+                Liran Zhou, Zhiquan Feng*, <strong>Hongyue Wang</strong>, Qingbei Guo · IJHCI 2023
+              </div>
+              <div>
+                Proposes a multimodal algorithm that models user comfort to improve collaborative
+                intention understanding between humans and computers.
+              </div>
+              <div class="pub-links">
+                <a href="/file/MIUIC.pdf" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/admt.202200549" target="_blank" rel="noopener">
+                  Multimodal Information Perception and Understanding: Smart Glove Applications in VR-Fusion Chemistry Experiments
+                </a>
+              </div>
+              <div class="pub-meta">
+                <strong>Hongyue Wang</strong>, Zhiquan Feng*, Xin Meng · Advanced Materials Technologies 2023
+              </div>
+              <div>
+                Details a smart glove platform enabling multimodal perception for virtual-reality
+                chemistry experiments that blend physical and digital actions.
+              </div>
+              <div class="pub-links">
+                <a href="/file/Multimodal%20Information%20Perception%20and%20Understanding%EF%BC%9AApplication%20of%20Smart%20Glove%20in%20Virtual-Reality%20Fusion%20Chemistry%20Experiment%20Platform.pdf" target="_blank" rel="noopener">Paper</a>
+                <a href="https://youtu.be/8btwYEO1cd4" target="_blank" rel="noopener">Video</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://www.hindawi.com/journals/cin/2022/3545850/" target="_blank" rel="noopener">
+                  MFA: A Smart Glove with Multimodal Intent Sensing Capability
+                </a>
+              </div>
+              <div class="pub-meta">
+                <strong>Hongyue Wang</strong>, Zhiquan Feng*, Jinglan Tian, Xue Fan · Computational Intelligence and Neuroscience 2022
+              </div>
+              <div>
+                Introduces a smart glove that captures multimodal biosignals to infer user intent for
+                future collaborative robotic systems.
+              </div>
+              <div class="pub-links">
+                <a href="/file/MFA.pdf" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://link.springer.com/chapter/10.1007/978-981-19-4546-5_32" target="_blank" rel="noopener">
+                  Research on the Structure and Key Algorithms of Smart Gloves for Middle School Experiment Scene Perception
+                </a>
+              </div>
+              <div class="pub-meta">
+                <strong>Hongyue Wang</strong>, Xin Meng, Zhiquan Feng* · ChineseCSCW 2021
+              </div>
+              <div>
+                Describes smart glove hardware/software architecture enabling contextual sensing for
+                collaborative learning scenarios.
+              </div>
+              <div class="pub-links">
+                <a href="/file/Research%20on%20the%20Structure%20and%20Key%20Algorithms%20of%20Smart%20Gloves%20Oriented%20to%20Middle%20School%20Experimental%20Scene%20Perception.pdf" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="workshops" class="section">
+          <h2 class="section-title">Workshop Papers, Extended Abstracts, and Doctoral Consortium</h2>
+          <hr />
+          <ul class="pub-list">
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://doi.org/10.1145/3715668.3736338" target="_blank" rel="noopener">
+                  Respireal: Enriching Human-Nature Connection through a Breath-Controlled Mixed Reality Experience
+                </a>
+              </div>
+              <div class="pub-meta">
+                Hong Luo, Pengtao Zhao, <strong>Hongyue Wang</strong>, vincent van Rheden, Rakesh Patibanda,
+                Yizhen Wang, Yuchen Hu, Don Samitha Elvitigala, Florian 'Floyd' Mueller · DIS 2025 Extended Abstract
+              </div>
+              <div>
+                Mixed reality installation that couples breath sensing with ambient nature cues to foster
+                restorative human–nature connections.
+              </div>
+              <div class="pub-links">
+                <a href="/file/Respireal.pdf" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://doi.org/10.1145/3706599.3719700" target="_blank" rel="noopener">
+                  GastroConcerto: Towards Designing Auditory Dining Systems to Enrich Chefs’ Culinary Practices
+                </a>
+              </div>
+              <div class="pub-meta">
+                <strong>Hongyue Wang</strong>, Jialin Deng, Dehui Kong, Ziqi Fang, Hong Luo, Nandini Pasumarthy,
+                Rakesh Patibanda, Sasindu Abewickrema, Xiao 'Zoe' Fang, Don Samitha Elvitigala, Florian 'Floyd' Mueller · CHI 2025 LBW
+              </div>
+              <div>
+                Presents an auditory dining system concept co-designed with chefs to explore sonic augmentations of culinary practice.
+              </div>
+              <div class="pub-links">
+                <a href="/file/gastro.pdf" target="_blank" rel="noopener">Paper</a>
+                <a href="https://www.youtube.com/watch?v=d0GZcocqnV0" target="_blank" rel="noopener">Video</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://doi.org/10.1145/3706599.3720228" target="_blank" rel="noopener">
+                  immersiTea: Exploring Multisensory VR Environments to Enrich Bubble Tea Drinking Experiences
+                </a>
+              </div>
+              <div class="pub-meta">
+                Yuchen Zheng, Jialin Deng, <strong>Hongyue Wang</strong>, Florian 'Floyd' Mueller, Xueni Pan, Marco Fyfe Pietro Gillies · CHI 2025 LBW
+              </div>
+              <div>
+                Investigates how multisensory VR scenes can enhance the experience of bubble tea rituals and storytelling.
+              </div>
+              <div class="pub-links">
+                <a href="/file/milktea.pdf" target="_blank" rel="noopener">Paper</a>
+                <a href="x" target="_blank" rel="noopener">Video</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://doi.org/10.1145/3613905.3651082" target="_blank" rel="noopener">
+                  pic2eat: Facilitating Social Ice-breaking through Collaborative Design of 3D Printed Appetizers
+                </a>
+              </div>
+              <div class="pub-meta">
+                <strong>Hongyue Wang</strong>, Jialin Deng, Aravind Mohan, Yinyi Li, Hao Peng, Linjia He, Don Samitha Elvitigala, Florian 'Floyd' Mueller · CHI 2024 LBW
+              </div>
+              <div>
+                Demonstrates a playful pipeline where groups co-design edible 3D-printed appetizers to jump-start social interaction.
+              </div>
+              <div class="pub-links">
+                <a href="/file/pic2eat.pdf" target="_blank" rel="noopener">Paper</a>
+                <a href="https://www.youtube.com/watch?v=d0GZcocqnV0" target="_blank" rel="noopener">Video</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://dl.acm.org/doi/10.1145/3613905.3650789" target="_blank" rel="noopener">
+                  PenLab: Towards Understanding of Active Collaboration for Solid Geometry Teaching
+                </a>
+              </div>
+              <div class="pub-meta">
+                Dehui Kong, <strong>Hongyue Wang</strong>, Sijie Zhou, Hong Cui, Zhiquan Feng · CHI 2024 LBW
+              </div>
+              <div>
+                Reports on a tangible pen-based system enabling collaborative exploration of geometric concepts in classrooms.
+              </div>
+              <div class="pub-links">
+                <a href="/file/penlab.pdf" target="_blank" rel="noopener">Paper</a>
+                <a href="https://www.youtube.com/watch?v=KzXrsdY8Xhw" target="_blank" rel="noopener">Video</a>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-title">
+                <a href="https://dl.acm.org/doi/abs/10.1145/3656156.3663699" target="_blank" rel="noopener">
+                  Pedalling into the Future: Towards Enhancing Cycling Experience Using Augmented Reality
+                </a>
+              </div>
+              <div class="pub-meta">
+                Linjia He, <strong>Hongyue Wang</strong>, Sarah Goodwin, Benjamin Tag, Don Samitha Elvitigala · DIS 2024 Extended Abstract
+              </div>
+              <div>
+                Explores AR concepts for urban cycling that blend data overlays with experiential storytelling for safer, playful rides.
+              </div>
+              <div class="pub-links">
+                <a href="/file/Pedalling%20into%20the%20Future.pdf" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="service" class="section">
+          <h2 class="section-title">Academic Service</h2>
+          <hr />
+          <ul class="news-list">
+            <li class="news-item">
+              <span class="news-date">2025</span>
+              <span class="news-text">
+                CHI 2025 Late-Breaking Work Associate Chair; Reviewer for CHI 2025 and the International Journal of Food Design.
+              </span>
+            </li>
+            <li class="news-item">
+              <span class="news-date">2024</span>
+              <span class="news-text">
+                Reviewer for the International Journal of Human-Computer Interaction, DIS 2024, and CHI 2024 Late-Breaking Work.
+              </span>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      © <span id="year"></span> Your Name. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // 自动更新年份
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
