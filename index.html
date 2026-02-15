@@ -275,10 +275,37 @@
       font-size: 0.95rem;
     }
 
+    .pub-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
     .pub-item + .pub-item {
       margin-top: 18px;
       padding-top: 14px;
       border-top: 1px dashed var(--border);
+    }
+
+    .pub-thumb {
+      flex: 0 0 20%;
+      max-width: 140px;
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #f5f1e7;
+    }
+
+    .pub-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pub-body {
+      flex: 1 1 80%;
     }
 
     .pub-title {
@@ -333,6 +360,15 @@
 
       .hero-photo {
         align-items: flex-start;
+      }
+
+      .pub-item {
+        flex-direction: column;
+      }
+
+      .pub-thumb {
+        width: 100%;
+        max-width: none;
       }
     }
   </style>
@@ -429,6 +465,19 @@
           <hr />
           <ul id="news-list" class="news-list" data-collapsed="true">
             <li class="news-item">
+              <span class="news-date">2026-04</span>
+              <span class="news-text">
+                I’m excited to share that I have three papers accepted to the CHI 2026 main track! Looking forward to seeing many of you in Barcelona, Spain. I’d love to connect, happy to chat over coffee, exchange ideas, and explore collaboration opportunities. Also, I’m actively open to academic job opportunities. :)
+              </span>
+            </li>
+
+            <li class="news-item">
+              <span class="news-date">2026-02</span>
+              <span class="news-text">
+                I will be giving a talk about my PhD research at the <a href="https://inclusiverealitylab.org/#/" target="_blank" rel="noopener">Inclusive Reality Lab</a>, the University of Auckland. Thanks to <a href="https://yunsuenpai.com/" target="_blank" rel="noopener">Dr. Yun Suen Pai</a> and <a href="https://www.linkedin.com/in/weijen-design/" target="_blank" rel="noopener">Dr. Weijen Chen</a> for the invitation.
+              </span>
+            </li>
+            <li class="news-item">
               <span class="news-date">2025-10</span>
               <span class="news-text">
                 I will be at <strong>ICHEC 2025</strong> in Singapore, presenting my latest poster
@@ -470,151 +519,228 @@
           <hr />
           <ul class="pub-list">
             <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://doi.org/10.1145/3706598.3714237" target="_blank" rel="noopener">
-                  Towards Understanding Interactive Sonic Gastronomy with Chefs and Diners
-                </a>
+              <div class="pub-thumb">
+                <img src="images/pubs/GC_CHI26.JPG" alt="Publication image placeholder" />
               </div>
-              <div class="pub-meta">
-                <strong>Hongyue Wang</strong>, Jialin Deng, Linjia He, Nathalie Overdevest, Ryan Wee, Yan Wang,
-                Phoebe O. Toups Dugas, Don Samitha Elvitigala, Florian 'Floyd' Mueller · CHI 2025
-              </div>
-              <div>
-                Field study unpacking how chefs and diners co-create sonic dining experiences
-                to inform future multisensory design tools.
-              </div>
-              <div class="pub-links">
-                <a href="/file/towards2025.pdf" target="_blank" rel="noopener">Paper</a>
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://doi.org/10.1145/3706598.3713892" target="_blank" rel="noopener">
-                  Sonic Delights: Exploring the Design of Food as An Auditory-Gustatory Interface
-                </a>
-              </div>
-              <div class="pub-meta">
-                Jialin Deng, Yinyi Li, <strong>Hongyue Wang</strong>, Ziqi Fang, Florian 'Floyd' Mueller · CHI 2025
-              </div>
-              <div>
-                Introduces speculative food artifacts that translate sonic cues into gustatory
-                sensations, expanding co-creative culinary practices.
-              </div>
-              <div class="pub-links">
-                <a href="/file/sonicdelights.pdf" target="_blank" rel="noopener">Paper</a>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="#" target="_blank" rel="noopener">
+                    GastroConcerto: Towards Designing Dining–Sound Pairings to Support Culinary Creativity
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  <strong>Hongyue Wang</strong>, Sasindu Abewickrema, Yuchen Zheng, Po-Yao (Cosmos) Wang, Hong Luo,
+                  Ziqi Fang, Jialin Deng, Nandini Pasumarthy, Don Samitha Elvitigala, Florian 'Floyd' Mueller<br/>
+                  CHI 2026
+                </div>
+                <div class="pub-links">
+                  <a href="/file/GC_CHI26.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
               </div>
             </li>
 
             <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://www.sciencedirect.com/science/article/pii/S1071581923002069" target="_blank" rel="noopener">
-                  Grand Challenges in Human-Food Interaction
-                </a>
+              <div class="pub-thumb">
+                <img src="images/pubs/it_CHI26.png" alt="Publication image placeholder" />
               </div>
-              <div class="pub-meta">
-                Florian 'Floyd' Mueller, Marianna Obrist, Ferran Altarriba Bertran, Neharika Makam, Soh Kim,
-                Christopher Dawes, Patrizia Marti, Maurizio Mancini, Eleonora Ceccaldi, Nandini Pasumarthy,
-                Sahej Claire, Kyung seo Jung, Jialin Deng, Jürgen Steimle, Nadejda Krasteva, Matti Schwalk,
-                Harald Reiterer, <strong>Hongyue Wang</strong>, Yan Wang · IJHCS 2024
-              </div>
-              <div>
-                A multi-institution agenda outlining opportunities and hurdles for future
-                human-food interaction research.
-              </div>
-              <div class="pub-links">
-                <a href="/file/grand%20challenges.pdf" target="_blank" rel="noopener">Paper</a>
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://www.tandfonline.com/doi/abs/10.1080/10447318.2023.2227823" target="_blank" rel="noopener">
-                  MRLab: Virtual Reality Fusion Smart Laboratory Based on Multimodal Fusion
-                </a>
-              </div>
-              <div class="pub-meta">
-                <strong>Hongyue Wang</strong>, Zhiquan Feng*, Xiaohui Yang, Liran Zhou, Jinglan Tian, Qingbei Guo · IJHCI 2023
-              </div>
-              <div>
-                Presents a multimodal VR laboratory platform that blends smart sensing and
-                instructional design for immersive chemistry education.
-              </div>
-              <div class="pub-links">
-                <a href="/file/MRLab.pdf" target="_blank" rel="noopener">Paper</a>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="#" target="_blank" rel="noopener">
+                    Towards Understanding the Design of Mixed Reality Systems to Enrich the Beverage Experience
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Yuchen Zheng, Zhuo Wang, <strong>Hongyue Wang</strong>, Don Samitha Elvitigala, Florian 'Floyd' Mueller<br/>
+                  CHI 2026
+                </div>
+                <div class="pub-links">
+                  <a href="/file/it_CHI26.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
               </div>
             </li>
 
             <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://www.tandfonline.com/doi/abs/10.1080/10447318.2023.2247606?journalCode=hihc20" target="_blank" rel="noopener">
-                  MIUIC: A Human-Computer Collaborative Multimodal Intention-Understanding Algorithm Incorporating Comfort Analysis
-                </a>
+              <div class="pub-thumb">
+                <img src="images/pubs/emojifan_CHI26.png" alt="Publication image placeholder" />
               </div>
-              <div class="pub-meta">
-                Liran Zhou, Zhiquan Feng*, <strong>Hongyue Wang</strong>, Qingbei Guo · IJHCI 2023
-              </div>
-              <div>
-                Proposes a multimodal algorithm that models user comfort to improve collaborative
-                intention understanding between humans and computers.
-              </div>
-              <div class="pub-links">
-                <a href="/file/MIUIC.pdf" target="_blank" rel="noopener">Paper</a>
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/admt.202200549" target="_blank" rel="noopener">
-                  Multimodal Information Perception and Understanding: Smart Glove Applications in VR-Fusion Chemistry Experiments
-                </a>
-              </div>
-              <div class="pub-meta">
-                <strong>Hongyue Wang</strong>, Zhiquan Feng*, Xin Meng · Advanced Materials Technologies 2023
-              </div>
-              <div>
-                Details a smart glove platform enabling multimodal perception for virtual-reality
-                chemistry experiments that blend physical and digital actions.
-              </div>
-              <div class="pub-links">
-                <a href="/file/Multimodal%20Information%20Perception%20and%20Understanding%EF%BC%9AApplication%20of%20Smart%20Glove%20in%20Virtual-Reality%20Fusion%20Chemistry%20Experiment%20Platform.pdf" target="_blank" rel="noopener">Paper</a>
-                <a href="https://youtu.be/8btwYEO1cd4" target="_blank" rel="noopener">Video</a>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="#" target="_blank" rel="noopener">
+                    EmojiFan: Designing A Social Interface Supporting Facial Expression Interaction for Blind and Low Vision People in Party Settings
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Jinlin Miao, Shan Luo, Yue Chen, <strong>Hongyue Wang</strong>, Zhejun Zhang, Rina R. Wehbe<br/>
+                  CHI 2026
+                </div>
+                <div class="pub-links">
+                  <a href="/file/emojifan_CHI26.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
               </div>
             </li>
 
             <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://www.hindawi.com/journals/cin/2022/3545850/" target="_blank" rel="noopener">
-                  MFA: A Smart Glove with Multimodal Intent Sensing Capability
-                </a>
+              <div class="pub-thumb">
+                <img src="images/pubs/CHI25-sonicream.png" alt="Publication image placeholder" />
               </div>
-              <div class="pub-meta">
-                <strong>Hongyue Wang</strong>, Zhiquan Feng*, Jinglan Tian, Xue Fan · Computational Intelligence and Neuroscience 2022
-              </div>
-              <div>
-                Introduces a smart glove that captures multimodal biosignals to infer user intent for
-                future collaborative robotic systems.
-              </div>
-              <div class="pub-links">
-                <a href="/file/MFA.pdf" target="_blank" rel="noopener">Paper</a>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://doi.org/10.1145/3706598.3714237" target="_blank" rel="noopener">
+                    Towards Understanding Interactive Sonic Gastronomy with Chefs and Diners
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  <strong>Hongyue Wang</strong>, Jialin Deng, Linjia He, Nathalie Overdevest, Ryan Wee, Yan Wang,
+                  Phoebe O. Toups Dugas, Don Samitha Elvitigala, Florian 'Floyd' Mueller<br/>
+                  CHI 2025
+                </div>
+                <div class="pub-links">
+                  <a href="/file/towards2025.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
               </div>
             </li>
 
             <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://link.springer.com/chapter/10.1007/978-981-19-4546-5_32" target="_blank" rel="noopener">
-                  Research on the Structure and Key Algorithms of Smart Gloves for Middle School Experiment Scene Perception
-                </a>
+              <div class="pub-thumb">
+                <img src="images/pubs/CHI25-cracker.png" alt="Publication image placeholder" />
               </div>
-              <div class="pub-meta">
-                <strong>Hongyue Wang</strong>, Xin Meng, Zhiquan Feng* · ChineseCSCW 2021
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://doi.org/10.1145/3706598.3713892" target="_blank" rel="noopener">
+                    Sonic Delights: Exploring the Design of Food as An Auditory-Gustatory Interface
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Jialin Deng, Yinyi Li, <strong>Hongyue Wang</strong>, Ziqi Fang, Florian 'Floyd' Mueller<br/>
+                  CHI 2025
+                </div>
+                <div class="pub-links">
+                  <a href="/file/sonicdelights.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
               </div>
-              <div>
-                Describes smart glove hardware/software architecture enabling contextual sensing for
-                collaborative learning scenarios.
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/IJHCS.jpg" alt="Publication image placeholder" />
               </div>
-              <div class="pub-links">
-                <a href="/file/Research%20on%20the%20Structure%20and%20Key%20Algorithms%20of%20Smart%20Gloves%20Oriented%20to%20Middle%20School%20Experimental%20Scene%20Perception.pdf" target="_blank" rel="noopener">Paper</a>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://www.sciencedirect.com/science/article/pii/S1071581923002069" target="_blank" rel="noopener">
+                    Grand Challenges in Human-Food Interaction
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Florian 'Floyd' Mueller, Marianna Obrist, Ferran Altarriba Bertran, Neharika Makam, Soh Kim,
+                  Christopher Dawes, Patrizia Marti, Maurizio Mancini, Eleonora Ceccaldi, Nandini Pasumarthy,
+                  Sahej Claire, Kyung seo Jung, Jialin Deng, Jürgen Steimle, Nadejda Krasteva, Matti Schwalk,
+                  Harald Reiterer, <strong>Hongyue Wang</strong>, Yan Wang<br/>
+                  IJHCS 2024
+                </div>
+                <div class="pub-links">
+                  <a href="/file/grand%20challenges.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/IJHCI23-glove.jpg" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://www.tandfonline.com/doi/abs/10.1080/10447318.2023.2227823" target="_blank" rel="noopener">
+                    MRLab: Virtual Reality Fusion Smart Laboratory Based on Multimodal Fusion
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  <strong>Hongyue Wang</strong>, Zhiquan Feng*, Xiaohui Yang, Liran Zhou, Jinglan Tian, Qingbei Guo<br/>
+                  IJHCI 2023
+                </div>
+                <div class="pub-links">
+                  <a href="/file/MRLab.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/IJHCI23-robot.png" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://www.tandfonline.com/doi/abs/10.1080/10447318.2023.2247606?journalCode=hihc20" target="_blank" rel="noopener">
+                    MIUIC: A Human-Computer Collaborative Multimodal Intention-Understanding Algorithm Incorporating Comfort Analysis
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Liran Zhou, Zhiquan Feng*, <strong>Hongyue Wang</strong>, Qingbei Guo<br/>
+                  IJHCI 2023
+                </div>
+                <div class="pub-links">
+                  <a href="/file/MIUIC.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/AMT.jpg" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/admt.202200549" target="_blank" rel="noopener">
+                    Multimodal Information Perception and Understanding: Smart Glove Applications in VR-Fusion Chemistry Experiments
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  <strong>Hongyue Wang</strong>, Zhiquan Feng*, Xin Meng<br/>
+                  Advanced Materials Technologies 2023
+                </div>
+                <div class="pub-links">
+                  <a href="/file/Multimodal%20Information%20Perception%20and%20Understanding%EF%BC%9AApplication%20of%20Smart%20Glove%20in%20Virtual-Reality%20Fusion%20Chemistry%20Experiment%20Platform.pdf" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://youtu.be/8btwYEO1cd4" target="_blank" rel="noopener">Video</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/MFA.png" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://www.hindawi.com/journals/cin/2022/3545850/" target="_blank" rel="noopener">
+                    MFA: A Smart Glove with Multimodal Intent Sensing Capability
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  <strong>Hongyue Wang</strong>, Zhiquan Feng*, Jinglan Tian, Xue Fan<br/>
+                  Computational Intelligence and Neuroscience 2022
+                </div>
+                <div class="pub-links">
+                  <a href="/file/MFA.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/chinesecscw2021.png" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://link.springer.com/chapter/10.1007/978-981-19-4546-5_32" target="_blank" rel="noopener">
+                    Research on the Structure and Key Algorithms of Smart Gloves for Middle School Experiment Scene Perception
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  <strong>Hongyue Wang</strong>, Xin Meng, Zhiquan Feng*<br/>
+                  ChineseCSCW 2021
+                </div>
+                <div class="pub-links">
+                  <a href="/file/Research%20on%20the%20Structure%20and%20Key%20Algorithms%20of%20Smart%20Gloves%20Oriented%20to%20Middle%20School%20Experimental%20Scene%20Perception.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
               </div>
             </li>
           </ul>
@@ -625,118 +751,258 @@
           <hr />
           <ul class="pub-list">
             <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://doi.org/10.1145/3715668.3736338" target="_blank" rel="noopener">
-                  Respireal: Enriching Human-Nature Connection through a Breath-Controlled Mixed Reality Experience
-                </a>
+              <div class="pub-thumb">
+                <img src="images/pubs/chi26sonification.png" alt="CHI 2026 Sonification Workshop image" />
               </div>
-              <div class="pub-meta">
-                Hong Luo, Pengtao Zhao, <strong>Hongyue Wang</strong>, vincent van Rheden, Rakesh Patibanda,
-                Yizhen Wang, Yuchen Hu, Don Samitha Elvitigala, Florian 'Floyd' Mueller · DIS 2025 Extended Abstract
-              </div>
-              <div>
-                Mixed reality installation that couples breath sensing with ambient nature cues to foster
-                restorative human–nature connections.
-              </div>
-              <div class="pub-links">
-                <a href="/file/Respireal.pdf" target="_blank" rel="noopener">Paper</a>
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://doi.org/10.1145/3706599.3719700" target="_blank" rel="noopener">
-                  GastroConcerto: Towards Designing Auditory Dining Systems to Enrich Chefs’ Culinary Practices
-                </a>
-              </div>
-              <div class="pub-meta">
-                <strong>Hongyue Wang</strong>, Jialin Deng, Dehui Kong, Ziqi Fang, Hong Luo, Nandini Pasumarthy,
-                Rakesh Patibanda, Sasindu Abewickrema, Xiao 'Zoe' Fang, Don Samitha Elvitigala, Florian 'Floyd' Mueller · CHI 2025 LBW
-              </div>
-              <div>
-                Presents an auditory dining system concept co-designed with chefs to explore sonic augmentations of culinary practice.
-              </div>
-              <div class="pub-links">
-                <a href="/file/gastro.pdf" target="_blank" rel="noopener">Paper</a>
-                <a href="https://www.youtube.com/watch?v=d0GZcocqnV0" target="_blank" rel="noopener">Video</a>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="/file/chi26sonification.pdf" target="_blank" rel="noopener">
+                    From Movement to Sound and Back: A Workshop on Movement-Based and Sonification Design Approaches
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Michael Reichmann, Vincent van Rheden, Maria F. Montoya, Hakan Yılmazer, <strong>Hongyue Wang</strong>, Laia Turmo Vidal, Daniel Hug, Nina Schaffert, Alexander Meschtscherjakov, Florian 'Floyd' Mueller<br/>
+                  CHI 2026 Workshop
+                </div>
+                <div class="pub-links">
+                  <a href="/file/chi26sonification.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
               </div>
             </li>
 
             <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://doi.org/10.1145/3706599.3720228" target="_blank" rel="noopener">
-                  immersiTea: Exploring Multisensory VR Environments to Enrich Bubble Tea Drinking Experiences
-                </a>
+              <div class="pub-thumb">
+                <img src="images/pubs/TEI26.jpg" alt="TEI 2026 image" />
               </div>
-              <div class="pub-meta">
-                Yuchen Zheng, Jialin Deng, <strong>Hongyue Wang</strong>, Florian 'Floyd' Mueller, Xueni Pan, Marco Fyfe Pietro Gillies · CHI 2025 LBW
-              </div>
-              <div>
-                Investigates how multisensory VR scenes can enhance the experience of bubble tea rituals and storytelling.
-              </div>
-              <div class="pub-links">
-                <a href="/file/milktea.pdf" target="_blank" rel="noopener">Paper</a>
-                <a href="x" target="_blank" rel="noopener">Video</a>
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://doi.org/10.1145/3613905.3651082" target="_blank" rel="noopener">
-                  pic2eat: Facilitating Social Ice-breaking through Collaborative Design of 3D Printed Appetizers
-                </a>
-              </div>
-              <div class="pub-meta">
-                <strong>Hongyue Wang</strong>, Jialin Deng, Aravind Mohan, Yinyi Li, Hao Peng, Linjia He, Don Samitha Elvitigala, Florian 'Floyd' Mueller · CHI 2024 LBW
-              </div>
-              <div>
-                Demonstrates a playful pipeline where groups co-design edible 3D-printed appetizers to jump-start social interaction.
-              </div>
-              <div class="pub-links">
-                <a href="/file/pic2eat.pdf" target="_blank" rel="noopener">Paper</a>
-                <a href="https://www.youtube.com/watch?v=d0GZcocqnV0" target="_blank" rel="noopener">Video</a>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="/file/TEI.pdf" target="_blank" rel="noopener">
+                    Asking Water with Stones: Designing Playful Dialogues with Water System to Build Connection between Human and Water Ecosystems
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Shan Luo, Weitao Jiang, Jinlin Miao, <strong>Hongyue Wang</strong>, Dawei Zhao, Jiangnan Xu, Çağlar Genç, Oğuz ‘Oz’ Buruk<br/>
+                  TEI 2026 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="/file/TEI.pdf" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://youtu.be/xtO-DPJx4m4" target="_blank" rel="noopener">Video</a>
+                </div>
               </div>
             </li>
 
             <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://dl.acm.org/doi/10.1145/3613905.3650789" target="_blank" rel="noopener">
-                  PenLab: Towards Understanding of Active Collaboration for Solid Geometry Teaching
-                </a>
+              <div class="pub-thumb">
+                <img src="images/pubs/sonifork.jpg" alt="SoniFork image" />
               </div>
-              <div class="pub-meta">
-                Dehui Kong, <strong>Hongyue Wang</strong>, Sijie Zhou, Hong Cui, Zhiquan Feng · CHI 2024 LBW
-              </div>
-              <div>
-                Reports on a tangible pen-based system enabling collaborative exploration of geometric concepts in classrooms.
-              </div>
-              <div class="pub-links">
-                <a href="/file/penlab.pdf" target="_blank" rel="noopener">Paper</a>
-                <a href="https://www.youtube.com/watch?v=KzXrsdY8Xhw" target="_blank" rel="noopener">Video</a>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="/file/sonifork.pdf" target="_blank" rel="noopener">
+                    SoniFork: Towards Chef-AI Sound Co-Creation for Orchestrating Real-Time Auditory Dining Experiences
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  <strong>Hongyue Wang</strong>, Sasindu Abewickrema, Hong Luo, Yuchen Zheng, Shan Luo, Ziqi Fang, Jialin Deng, Don Samitha Elvitigala, Florian 'Floyd' Mueller<br/>
+                  ICHEC 2025 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="/file/sonifork.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
               </div>
             </li>
 
             <li class="pub-item">
-              <div class="pub-title">
-                <a href="https://dl.acm.org/doi/abs/10.1145/3656156.3663699" target="_blank" rel="noopener">
-                  Pedalling into the Future: Towards Enhancing Cycling Experience Using Augmented Reality
-                </a>
+              <div class="pub-thumb">
+                <img src="images/pubs/ICHEC_HS.png" alt="Hearing the Smile image" />
               </div>
-              <div class="pub-meta">
-                Linjia He, <strong>Hongyue Wang</strong>, Sarah Goodwin, Benjamin Tag, Don Samitha Elvitigala · DIS 2024 Extended Abstract
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="/file/ICHEC_2025_HS.pdf" target="_blank" rel="noopener">
+                    Hearing the Smile: Facilitating Spontaneous Social Ice-Breaking through Sonifying Interpersonal Warmth for the Visually Impaired Individuals
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Shan Luo, Jinlin Miao, Yue Chen, <strong>Hongyue Wang</strong>, Siyu Tian, Xin Tong<br/>
+                  ICHEC 2025 Extended Abstract — <strong>Honorable Mention 🥇</strong>
+                </div>
+                <div class="pub-links">
+                  <a href="/file/ICHEC_2025_HS.pdf" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://www.youtube.com/watch?v=Bkc6LRNiSLQ" target="_blank" rel="noopener">Video</a>
+                </div>
               </div>
-              <div>
-                Explores AR concepts for urban cycling that blend data overlays with experiential storytelling for safer, playful rides.
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/emojifan_CHI26.png" alt="EmojiFan image" />
               </div>
-              <div class="pub-links">
-                <a href="/file/Pedalling%20into%20the%20Future.pdf" target="_blank" rel="noopener">Paper</a>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="/file/ICHEC_2025_EmojiFan.pdf" target="_blank" rel="noopener">
+                    EmojiFan: A Personalized Fan Designed for Visually Impaired Individuals to Express Themselves in Party Scenes
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Jinlin Miao, Shan Luo, Yue Chen, <strong>Hongyue Wang</strong>, Rina Whebe, Shiyang Lou<br/>
+                  ICHEC 2025 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="/file/ICHEC_2025_EmojiFan.pdf" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://www.youtube.com/watch?v=tUyL3eht8tI" target="_blank" rel="noopener">Video</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/Ismar26.jpg" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://ieeexplore.ieee.org/abstract/document/11236302/" target="_blank" rel="noopener">
+                    "When You Are the Plant": Encouraging Hydration Through Playful Virtual Reality Embodiment
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Yuchen Zheng, Ashlyn Doyle, <strong>Hongyue Wang</strong>, Jialin Deng, Don Samitha Elvitigala<br/>
+                  ISMAR 2025 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="/file/ISMAR26.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/dis26-breath.png" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://doi.org/10.1145/3715668.3736338" target="_blank" rel="noopener">
+                    Respireal: Enriching Human-Nature Connection through a Breath-Controlled Mixed Reality Experience
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Hong Luo, Pengtao Zhao, <strong>Hongyue Wang</strong>, vincent van Rheden, Rakesh Patibanda,
+                  Yizhen Wang, Yuchen Hu, Don Samitha Elvitigala, Florian 'Floyd' Mueller<br/>
+                  DIS 2025 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="/file/Respireal.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/chi25-gc.png" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://doi.org/10.1145/3706599.3719700" target="_blank" rel="noopener">
+                    GastroConcerto: Towards Designing Auditory Dining Systems to Enrich Chefs’ Culinary Practices
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  <strong>Hongyue Wang</strong>, Jialin Deng, Dehui Kong, Ziqi Fang, Hong Luo, Nandini Pasumarthy,
+                  Rakesh Patibanda, Sasindu Abewickrema, Xiao 'Zoe' Fang, Don Samitha Elvitigala, Florian 'Floyd' Mueller<br/>
+                  CHI 2025 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="/file/gastro.pdf" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://www.youtube.com/watch?v=d0GZcocqnV0" target="_blank" rel="noopener">Video</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/chi25-tea.jpg" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://doi.org/10.1145/3706599.3720228" target="_blank" rel="noopener">
+                    immersiTea: Exploring Multisensory VR Environments to Enrich Bubble Tea Drinking Experiences
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Yuchen Zheng, Jialin Deng, <strong>Hongyue Wang</strong>, Florian 'Floyd' Mueller, Xueni Pan, Marco Fyfe Pietro Gillies<br/>
+                  CHI 2025 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="/file/milktea.pdf" target="_blank" rel="noopener">Paper</a>
+                  <a href="x" target="_blank" rel="noopener">Video</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/CHI24-3dfp.png" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://doi.org/10.1145/3613905.3651082" target="_blank" rel="noopener">
+                    pic2eat: Facilitating Social Ice-breaking through Collaborative Design of 3D Printed Appetizers
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  <strong>Hongyue Wang</strong>, Jialin Deng, Aravind Mohan, Yinyi Li, Hao Peng, Linjia He, Don Samitha Elvitigala, Florian 'Floyd' Mueller<br/>
+                  CHI 2024 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="/file/pic2eat.pdf" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://www.youtube.com/watch?v=d0GZcocqnV0" target="_blank" rel="noopener">Video</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/chi24-penlab.png" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://dl.acm.org/doi/10.1145/3613905.3650789" target="_blank" rel="noopener">
+                    PenLab: Towards Understanding of Active Collaboration for Solid Geometry Teaching
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Dehui Kong, <strong>Hongyue Wang</strong>, Sijie Zhou, Hong Cui, Zhiquan Feng<br/>
+                  CHI 2024 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="/file/penlab.pdf" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://www.youtube.com/watch?v=KzXrsdY8Xhw" target="_blank" rel="noopener">Video</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/dis24-cycling.jpg" alt="Publication image placeholder" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://dl.acm.org/doi/abs/10.1145/3656156.3663699" target="_blank" rel="noopener">
+                    Pedalling into the Future: Towards Enhancing Cycling Experience Using Augmented Reality
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Linjia He, <strong>Hongyue Wang</strong>, Sarah Goodwin, Benjamin Tag, Don Samitha Elvitigala<br/>
+                  DIS 2024 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="/file/Pedalling%20into%20the%20Future.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
               </div>
             </li>
           </ul>
         </section>
 
         <section id="service" class="section">
-          <h2 class="section-title">Academic Service</h2>
+          <h2 class="section-title">Academic Outreach, Service, and Teaching</h2>
           <hr />
           <ul class="news-list">
             <li class="news-item">
@@ -748,7 +1014,7 @@
             <li class="news-item">
               <span class="news-date">2024</span>
               <span class="news-text">
-                Reviewer for the International Journal of Human-Computer Interaction, DIS 2024, and CHI 2024 Late-Breaking Work.
+                Reviewer for the International Journal of Human-Computer Interaction, DIS 2024, and CHI 2024 Late-Breaking Work; Mentor for a Monash University final-year project.
               </span>
             </li>
           </ul>
@@ -757,7 +1023,7 @@
     </main>
 
     <footer class="footer">
-      © <span id="year"></span> Your Name. All rights reserved.
+      © <span id="year"></span> Hongyue Wang. All rights reserved.
     </footer>
   </div>
 
