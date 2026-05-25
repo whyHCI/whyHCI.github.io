@@ -288,9 +288,9 @@
     }
 
     .pub-thumb {
-      flex: 0 0 20%;
-      max-width: 140px;
-      aspect-ratio: 1 / 1;
+      flex: 0 0 calc(30% - 10px);
+      max-width: calc(30% - 10px);
+      aspect-ratio: 16 / 9;
       border-radius: 18px;
       overflow: hidden;
       border: 1px solid var(--border);
@@ -305,7 +305,7 @@
     }
 
     .pub-body {
-      flex: 1 1 80%;
+      flex: 1 1 calc(70% - 10px);
     }
 
     .pub-title {
@@ -465,6 +465,13 @@
           <hr />
           <ul id="news-list" class="news-list" data-collapsed="true">
             <li class="news-item">
+              <span class="news-date">2026-06</span>
+              <span class="news-text">
+                I’m excited to be back in Singapore for DIS 2026. It’ll be my first time joining the DIS community, and I’ll be leading a workshop on <a href="https://www.edibleinteractions.art/" target="_blank" rel="noopener">Edible Interaction</a> on June 14. I’m also sharing three collaborative full papers, including one that received a Best Paper Honorable Mention. Congrats, Yuchen!
+              </span>
+            </li>
+
+            <li class="news-item">
               <span class="news-date">2026-04</span>
               <span class="news-text">
                 I’m excited to share that I have three papers accepted to the CHI 2026 main track! Looking forward to seeing many of you in Barcelona, Spain. I’d love to connect, happy to chat over coffee, exchange ideas, and explore collaboration opportunities. Also, I’m actively open to academic job opportunities. :)
@@ -520,6 +527,62 @@
           <ul class="pub-list">
             <li class="pub-item">
               <div class="pub-thumb">
+                <img src="images/pubs/dis26-xr.png" alt="E.A.T. publication image" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/05/eat_dis2026.pdf" target="_blank" rel="noopener">
+                    E.A.T.: Towards Understanding the Design of Social XR Restaurant Experiences for Diners With and Without Headsets
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Yuchen Zheng, <strong>Hongyue Wang</strong>, Kenath Perera, Henryaldi Matio, Florian &apos;Floyd&apos; Mueller<br/>
+                  DIS 2026 — Best Paper Honorable Mention Award🏅
+                </div>
+                <div class="pub-links">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/05/eat_dis2026.pdf" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://www.youtube.com/watch?v=WqzIZXzJhgk" target="_blank" rel="noopener">Video</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/dis26-music sound.png" alt="Composing for the Palate publication image" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  Composing for the Palate: Designing and Investigating Taste-Matching Sounds for Cross-Sensory Interaction
+                </div>
+                <div class="pub-meta">
+                  Jialin Deng, Min Susan Li, Zhuzhi Fan, <strong>Hongyue Wang</strong>, Peter Bennett, Ziqi Fang, Priscilla Y. Lo, Oussama Metatla<br/>
+                  DIS 2026
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/DIS26-Surf.png" alt="SurfSync publication image" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/05/surfsync_dis2026.pdf" target="_blank" rel="noopener">
+                    SurfSync: Towards the Design of Wearables to Enrich Surfing
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Maria F. Montoya, Vincent van Rheden, Rakesh Patibanda, Nathalie Overdevest, Aryan Saini, Jiaxuan Wu, <strong>Hongyue Wang</strong>, Phoebe O. Toups Dugas, Florian &apos;Floyd&apos; Mueller<br/>
+                  DIS 2026
+                </div>
+                <div class="pub-links">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/05/surfsync_dis2026.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
                 <img src="images/pubs/GC_CHI26.JPG" alt="Publication image placeholder" />
               </div>
               <div class="pub-body">
@@ -556,6 +619,7 @@
                 </div>
                 <div class="pub-links">
                   <a href="/file/it_CHI26.pdf" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://www.youtube.com/watch?v=BwSWDZn0T-E" target="_blank" rel="noopener">Video</a>
                 </div>
               </div>
             </li>
@@ -605,7 +669,7 @@
 
             <li class="pub-item">
               <div class="pub-thumb">
-                <img src="images/pubs/CHI25-cracker.png" alt="Publication image placeholder" />
+                <img src="images/pubs/CHI25-cracker.jpg" alt="Publication image placeholder" />
               </div>
               <div class="pub-body">
                 <div class="pub-title">
@@ -649,7 +713,7 @@
 
             <li class="pub-item">
               <div class="pub-thumb">
-                <img src="images/pubs/IJHCI23-glove.jpg" alt="Publication image placeholder" />
+                <img src="images/pubs/IJHCI23-glove.png" alt="Publication image placeholder" />
               </div>
               <div class="pub-body">
                 <div class="pub-title">
@@ -689,7 +753,7 @@
 
             <li class="pub-item">
               <div class="pub-thumb">
-                <img src="images/pubs/AMT.jpg" alt="Publication image placeholder" />
+                <img src="images/pubs/AMT.png" alt="Publication image placeholder" />
               </div>
               <div class="pub-body">
                 <div class="pub-title">
@@ -756,6 +820,87 @@
           <ul class="pub-list">
             <li class="pub-item">
               <div class="pub-thumb">
+                <img src="images/pubs/dis26-plant.jpg" alt="Listen to the Plant image" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/05/listen_dis2026.pdf" target="_blank" rel="noopener">
+                    Listen to the Plant: Exploring the Design of Plant Care as an Auditory Interface to Promote Caregiving Behavior
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Hong Luo, Pankaja Balasooriya, Rusula Oshadha Pathirana, <strong>Hongyue Wang</strong>, Don Samitha Elvitigala, Florian &apos;Floyd&apos; Mueller<br/>
+                  DIS 2026 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/05/listen_dis2026.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/Edible Interactions.jpg" alt="Beyond Interfaces edible interactions image" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/05/beyond_edible_dis2026.pdf" target="_blank" rel="noopener">
+                    Beyond Interfaces: the Future of Edible Interactions
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  <strong>Hongyue Wang</strong>, Jialin Deng, Yuchen Zheng, Ziqi Fang, Charles Spence, Ferran Altarriba Bertran, Koya Narumi, Lei Gao, Weijen Chen, Lining Yao, Mako Miyatake, Marianna Obrist, Homei Miyashita, Chi Thanh Vi, Oussama Metatla, Florian &apos;Floyd&apos; Mueller<br/>
+                  DIS 2026 Workshop
+                </div>
+                <div class="pub-links">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/05/beyond_edible_dis2026.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/CHI26-Wizard.png" alt="The Wizard of Taste image" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/03/wizard_of_taste_chi2026.pdf" target="_blank" rel="noopener">
+                    The Wizard of Taste: Demonstrating Multisensory Eating with Electrical Taste and Bone-conduction Auditory Seasoning
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  Ziqi Fang, <strong>Hongyue Wang</strong>, Nilakna Disiwari Warushavithana, Subasinghe Piyarathnage Sahan Madusanka, Jialin Deng, Weijen Chen, Don Samitha Elvitigala, Florian &apos;Floyd&apos; Mueller<br/>
+                  CHI 2026 Extended Abstract — Popular Choice Honorable Mention 🥇
+                </div>
+                <div class="pub-links">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/03/wizard_of_taste_chi2026.pdf" target="_blank" rel="noopener">Paper</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
+                <img src="images/pubs/CHI26-InBite.JPG" alt="InBite image" />
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/03/inbite_chi2026.pdf" target="_blank" rel="noopener">
+                    InBite: Towards Designing Real-time Configurable Auditory Dining Experience for Each Bite
+                  </a>
+                </div>
+                <div class="pub-meta">
+                  <strong>Hongyue Wang</strong>, Yuting Wu, Subasinghe Piyarathnage Sahan Madusanka, Ziqi Fang, Yuchen Zheng, Hong Luo, Jialin Deng, Don Samitha Elvitigala, Florian &apos;Floyd&apos; Mueller<br/>
+                  CHI 2026 Extended Abstract
+                </div>
+                <div class="pub-links">
+                  <a href="https://exertiongameslab.org/wp-content/uploads/2026/03/inbite_chi2026.pdf" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://youtu.be/GyIUpXjeeOI" target="_blank" rel="noopener">Video</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="pub-item">
+              <div class="pub-thumb">
                 <img src="images/pubs/chi26sonification.png" alt="CHI 2026 Sonification Workshop image" />
               </div>
               <div class="pub-body">
@@ -797,7 +942,7 @@
 
             <li class="pub-item">
               <div class="pub-thumb">
-                <img src="images/pubs/sonifork.jpg" alt="SoniFork image" />
+                <img src="images/pubs/sonifork.png" alt="SoniFork image" />
               </div>
               <div class="pub-body">
                 <div class="pub-title">
@@ -859,7 +1004,7 @@
 
             <li class="pub-item">
               <div class="pub-thumb">
-                <img src="images/pubs/Ismar26.jpg" alt="Publication image placeholder" />
+                <img src="images/pubs/Ismar26.png" alt="Publication image placeholder" />
               </div>
               <div class="pub-body">
                 <div class="pub-title">
@@ -879,7 +1024,7 @@
 
             <li class="pub-item">
               <div class="pub-thumb">
-                <img src="images/pubs/dis26-breath.png" alt="Publication image placeholder" />
+                <img src="images/pubs/dis26-breath.jpg" alt="Publication image placeholder" />
               </div>
               <div class="pub-body">
                 <div class="pub-title">
@@ -900,7 +1045,7 @@
 
             <li class="pub-item">
               <div class="pub-thumb">
-                <img src="images/pubs/chi25-gc.png" alt="Publication image placeholder" />
+                <img src="images/pubs/chi25-gc.jpg" alt="Publication image placeholder" />
               </div>
               <div class="pub-body">
                 <div class="pub-title">
